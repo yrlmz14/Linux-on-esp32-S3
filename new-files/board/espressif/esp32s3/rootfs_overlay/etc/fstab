@@ -1,0 +1,11 @@
+# /etc/fstab: static file system information.
+# <file system> <mount pt>     <type>	<options>         <dump> <pass>
+/dev/root       /              cramfs	ro                0      0
+proc            /proc          proc	defaults          0      0
+devpts          /dev/pts       devpts	defaults,gid=5,mode=620   0      0
+tmpfs           /dev/shm       tmpfs	mode=0777         0      0
+tmpfs           /tmp           tmpfs	size=1M,mode=1777 0      0
+tmpfs           /run           tmpfs	size=512k,mode=0755,nosuid,nodev 0 0
+sysfs           /sys           sysfs	defaults          0      0
+mtd:etc         /etc           jffs2	nofail            0      0
+mtd:home        /home          jffs2	nofail            0      0

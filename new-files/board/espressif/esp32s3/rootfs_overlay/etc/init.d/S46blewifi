@@ -6,6 +6,7 @@ PIDFILE=/var/run/ble-wifi-setup.pid
 case "$1" in
 start)
 	[ -e /dev/esp-ble ] || exit 0
+	[ ! -e /etc/ble-wifi-disabled ] || exit 0
 	printf 'Starting BLE WiFi setup: '
 	start-stop-daemon -S -q -m -p "$PIDFILE" -b -x "$DAEMON" && echo "OK" || echo "FAIL"
 	;;
